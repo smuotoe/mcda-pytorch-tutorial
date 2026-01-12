@@ -19,8 +19,8 @@ Broadcasting allows operations on tensors of **different shapes** by automatical
 ```python
 # Without broadcasting - shapes must match exactly
 a = torch.tensor([1, 2, 3])
-b = torch.tensor([10, 20, 30])
-a + b  # tensor([11, 22, 33])
+b = torch.tensor([10, 10, 10])
+a + b  # tensor([11, 12, 13])
 
 # With broadcasting - scalar expands to match
 a = torch.tensor([1, 2, 3])
