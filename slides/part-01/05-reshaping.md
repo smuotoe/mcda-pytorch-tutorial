@@ -83,7 +83,7 @@ layout: default
 
 <div>
 
-### Transpose (2D)
+### Transpose (2D matrices)
 
 ```python
 m = torch.tensor([[1, 2, 3],
@@ -99,30 +99,45 @@ m.transpose(0, 1)  # same
 #  [3, 6]]
 ```
 
+### transpose() on Higher Dimensions
+
+```python
+# transpose() swaps exactly two dimensions
+t = torch.zeros(2, 3, 4, 5)
+t.transpose(1, 3).shape  # (2, 5, 4, 3)
+# Dims 1 and 3 swapped: 3<->5
+
+# For 2D, these are equivalent:
+m.T
+m.transpose(0, 1)
+```
+
 </div>
 
 <div>
 
-### Permute (any dimensions)
+### Permute (reorder all dimensions)
 
 ```python
 t = torch.zeros(2, 3, 4)  # (batch, height, width)
 
-# Reorder dimensions
+# Specify new order of ALL dimensions
 t.permute(0, 2, 1).shape  # (2, 4, 3)
 t.permute(2, 1, 0).shape  # (4, 3, 2)
-
-# Common use: channels first <-> channels last
-img = torch.zeros(3, 224, 224)  # (C, H, W)
-img.permute(1, 2, 0).shape      # (H, W, C)
 ```
 
-### transpose for nD
+### Common Use: Channel Ordering
 
 ```python
-t = torch.zeros(2, 3, 4, 5)
-t.transpose(1, 3).shape  # (2, 5, 4, 3)
-# Only swaps two dimensions at a time
+# PyTorch default: channels first (C, H, W)
+# Some libraries expect: channels last (H, W, C)
+
+img = torch.zeros(3, 224, 224)  # (C, H, W)
+img.permute(1, 2, 0).shape      # (H, W, C)
+
+# Batch of images
+batch = torch.zeros(32, 3, 224, 224)  # (N, C, H, W)
+batch.permute(0, 2, 3, 1).shape       # (N, H, W, C)
 ```
 
 </div>
