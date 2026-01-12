@@ -75,7 +75,7 @@ layout: default
 
 # Why PyTorch?
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-6 mt-2">
 
 <div>
 
@@ -87,7 +87,7 @@ layout: default
 | Research adoption | Dominant | Less common |
 | API style | Pythonic, intuitive | More verbose |
 
-<div class="mt-4 text-sm">
+<div class="mt-3 text-sm">
 
 Both frameworks are capable of the same tasks. PyTorch is often preferred for learning and research due to its simpler API.
 
@@ -103,7 +103,7 @@ Both frameworks are capable of the same tasks. PyTorch is often preferred for le
 - Code reads like standard Python
 - Operations behave as you'd expect
 
-<div class="mt-3">
+<div class="mt-2">
 
 **Easy to Experiment**
 - Interactive development in notebooks
@@ -111,7 +111,7 @@ Both frameworks are capable of the same tasks. PyTorch is often preferred for le
 
 </div>
 
-<div class="mt-3">
+<div class="mt-2">
 
 **Great Documentation**
 - Extensive official tutorials
@@ -123,7 +123,7 @@ Both frameworks are capable of the same tasks. PyTorch is often preferred for le
 
 </div>
 
-<div class="mt-4 text-xs opacity-70">
+<div class="absolute bottom-4 left-12 text-xs opacity-70">
 
 Source: [PyTorch vs TensorFlow Comparison (OpenCV)](https://opencv.org/blog/pytorch-vs-tensorflow/)
 

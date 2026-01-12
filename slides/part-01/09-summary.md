@@ -6,13 +6,14 @@ layout: section
 
 ---
 layout: default
+class: text-sm
 ---
 
 # Part 1 Exercises
 
-Practice what you've learned with hands-on tensor exercises.
+<div class="text-sm opacity-70 mb-2">Practice what you've learned with hands-on tensor exercises.</div>
 
-<div class="grid grid-cols-2 gap-6">
+<div class="grid grid-cols-2 gap-4">
 
 <div>
 
@@ -49,11 +50,9 @@ Practice what you've learned with hands-on tensor exercises.
 
 </div>
 
-<div class="mt-6 p-4 border rounded">
+<div class="mt-4 p-3 border rounded text-sm">
 
-**File**: `exercises/01-tensor-operations.py`
-
-Run with: `python exercises/01-tensor-operations.py`
+**File**: `exercises/part1-exercises.ipynb` - Open in Jupyter Notebook or VS Code
 
 </div>
 

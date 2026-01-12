@@ -25,7 +25,7 @@ A **tensor** is an n-dimensional array - the fundamental data structure in PyTor
 ```python
 torch.tensor(5)
 ```
-Shape: `()`
+Shape: <code>()</code>
 
 </div>
 
@@ -36,7 +36,7 @@ Shape: `()`
 ```python
 torch.tensor([1, 2, 3])
 ```
-Shape: `(3,)`
+Shape: <code>(3,)</code>
 
 </div>
 
@@ -50,7 +50,7 @@ torch.tensor([
     [3, 4]
 ])
 ```
-Shape: `(2, 2)`
+Shape: <code>(2, 2)</code>
 
 </div>
 
@@ -61,7 +61,7 @@ Shape: `(2, 2)`
 ```python
 torch.rand(2, 3, 4)
 ```
-Shape: `(2, 3, 4)`
+Shape: <code>(2, 3, 4)</code>
 
 </div>
 

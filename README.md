@@ -1,21 +1,62 @@
-## Tutorial 4: Introduction to Pytorch
+# Introduction to PyTorch
 
-### Prerequisite
-- https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html
-- Install `uv`: <https://docs.astral.sh/uv/getting-started/installation/>
+**MCDA 5511: Current Practices in Data Science**
 
-### Learning Objectives
-1. Understand Pytorch tensor operations
-2. Understand basic neural network architecture
-3. Implement forward pass in PyTorch
-4. Train a model using PyTorch's training loop
-5. Compare different network architectures
+A two-part tutorial series on PyTorch fundamentals.
 
-### Setup
-Install relevant packages in a virtual environment (.venv) 
-```
+[View Slides](https://mcda-pytorch-tutorial.pages.dev)
+
+## Part 1: Tensors, Operations & Autograd
+
+- What is PyTorch?
+- Tensors: creation, attributes, data types
+- Tensor operations & broadcasting
+- Reshaping & memory (views vs copies)
+- Indexing & slicing
+- Automatic differentiation (Autograd)
+
+## Part 2: Building & Training Neural Networks (Coming Soon)
+
+- The `nn.Module` class
+- Building network architectures
+- Loss functions & optimizers
+- The training loop
+- Model evaluation
+
+## Setup
+
+### Prerequisites
+
+- Python 3.10+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager
+
+### Installation
+
+```bash
+git clone https://github.com/smuotoe/mcda-pytorch-tutorial.git
+cd mcda-pytorch-tutorial
 uv sync
 ```
-### Complete Exercises
-- 01-tensor-operations.py
-- 02-neural-network.py
+
+This installs the **CPU-only** version of PyTorch (smaller download, works on all devices).
+
+### CUDA Support (Optional)
+
+If you have an NVIDIA GPU with CUDA support:
+
+```bash
+uv sync --extra cuda
+```
+
+## Exercises
+
+Complete the hands-on exercises in Jupyter Notebook:
+
+```bash
+exercises/part1-exercises.ipynb
+```
+
+## Resources
+
+- [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)
+- [PyTorch 60-Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)

@@ -11,3 +11,9 @@ wheels/
 .idea
 .claude
 node_modules/
+
+# Archive folder (local reference files)
+_archive/
+
+# Screenshot artifacts (debugging PNGs)
+/*.png

@@ -1,42 +1,42 @@
 [project]
-name = "tutorial-3"
+name = "mcda-pytorch-tutorial"
 version = "0.1.0"
-description = "Intro to Pytorch"
+description = "Introduction to PyTorch - MCDA 5511"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "numpy>=2.2.2",
-    "pandas>=2.2.3",
-    "scikit-learn>=1.6.1",
-    "torch>=2.6.0",
-    "torchvision>=0.21.0",
+    "numpy>=2.0.0",
+    "torch>=2.5.0",
+    "torchvision>=0.20.0",
 ]
 
 [project.optional-dependencies]
-cpu = [
-  "torch>=2.5.1",
-]
-cu124 = [
-  "torch>=2.5.1",
+cuda = [
+    "torch>=2.5.0",
+    "torchvision>=0.20.0",
 ]
 
+# Default: CPU-only PyTorch (smaller download, works on all devices)
+# For CUDA support: uv sync --extra cuda
 [tool.uv.sources]
 torch = [
-  { index = "pytorch-cu124", extra = "cu124", marker = "platform_system != 'Darwin'"},
-  { index = "pytorch-cpu", extra = "cpu", marker = "platform_system == 'Darwin'"},
+    { index = "pytorch-cpu" },
 ]
-
-[[tool.uv.index]]
-name = "pytorch-cu124"
-url = "https://download.pytorch.org/whl/cu124"
-explicit = true
+torchvision = [
+    { index = "pytorch-cpu" },
+]
 
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
 
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
 [dependency-groups]
 dev = [
-    "black>=25.1.0",
+    "ruff>=0.8.0",
 ]

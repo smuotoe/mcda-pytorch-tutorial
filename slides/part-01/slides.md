@@ -13,14 +13,19 @@ transition: slide-left
 mdc: true
 ---
 
-# Introduction to PyTorch
+<div class="absolute top-12 left-1/2 -translate-x-1/2 text-center">
+  <div class="text-xs uppercase tracking-[0.3em] opacity-50">MCDA 5511</div>
+  <div class="text-sm opacity-60 mt-1">Current Practices in Computing and Data Science</div>
+</div>
 
-## Part 1: Tensors, Operations & Autograd
+<div class="mt-16">
+  <h1 class="!text-5xl font-bold tracking-tight">Introduction to PyTorch</h1>
+  <p class="text-xl opacity-70 mt-4">Part 1: Tensors, Operations & Autograd</p>
+</div>
 
-MCDA 5511 | Current Practices in Data Science
-
-<div class="abs-br m-6 text-sm opacity-50">
-Somto Muotoe
+<div class="absolute bottom-14 left-1/2 -translate-x-1/2 text-center">
+  <div class="text-base font-medium">Somto Muotoe</div>
+  <div class="text-sm opacity-50 mt-1">{{ new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) }}</div>
 </div>
 
 ---
@@ -128,15 +133,20 @@ src: ./09-summary.md
 ---
 
 ---
-layout: end
+layout: center
+class: text-center
 ---
 
 # End of Part 1
 
-Next week: Building & Training Neural Networks
+## Next week: Building & Training Neural Networks
 
-<div class="mt-8 text-sm opacity-70">
+<div class="mt-8">
 
 Questions? Bring them to the session!
 
+</div>
+
+<div class="abs-br m-6 text-sm opacity-50">
+MCDA 5511
 </div>

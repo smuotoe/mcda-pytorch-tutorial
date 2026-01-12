@@ -16,14 +16,15 @@ layout: default
 
 Neural networks learn by adjusting weights to minimize a loss function.
 
-<div class="mt-4">
+<div class="mt-4 flex justify-center">
 
-```text
-                    Forward Pass
-Input  --->  [ Weights ]  --->  Prediction  --->  Loss
-                  ^                                 |
-                  |         Backward Pass           |
-                  +---- [ Gradients ] <-------------+
+```mermaid {scale: 1.2}
+flowchart LR
+    A[Input] -->|Forward| B[Weights]
+    B --> C[Prediction]
+    C --> D[Loss]
+    D -->|Backward| E[Gradients]
+    E --> B
 ```
 
 </div>
@@ -196,37 +197,31 @@ out = z.sum()    # scalar output
 out.backward()   # traverse graph backwards
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-6 mt-2">
 
-<div class="text-center p-4">
+<div class="text-center">
 
-```text
-     x          y
-     |          |
-     +----+-----+
-          |
-        z = x*y
-          |
-       out = sum
+### Forward Pass (values flow down)
+
+```mermaid {scale: 0.9}
+flowchart TB
+    X["x = 2.0"] --> Z["z = x * y = 6.0"]
+    Y["y = 3.0"] --> Z
+    Z --> OUT["out = z.sum() = 6.0"]
 ```
-
-**Forward**: values flow down
 
 </div>
 
-<div class="text-center p-4">
+<div class="text-center">
 
-```text
-  x.grad      y.grad
-     ^          ^
-     +----+-----+
-          |
-       dz/d(x,y)
-          ^
-       dout/dz = 1
+### Backward Pass (gradients flow up)
+
+```mermaid {scale: 0.85}
+flowchart BT
+    OUT["d(out)/d(out) = 1"] --> Z["d(out)/d(z) = 1"]
+    Z --> X["x.grad<br>= d(z)/d(x) = y = 3.0"]
+    Z --> Y["y.grad<br>= d(z)/d(y) = x = 2.0"]
 ```
-
-**Backward**: gradients flow up
 
 </div>
 
@@ -276,7 +271,7 @@ y1.backward()
 print(x.grad)  # tensor([4.0])
 
 # Clear gradients before next backward
-x.grad.zero_()  # or x.grad = None
+x.grad = None  # or x.grad.zero_()
 
 # Second backward (fresh start)
 y2 = x ** 3
@@ -288,9 +283,9 @@ print(x.grad)  # tensor([12.0]) - correct!
 
 </div>
 
-<div class="mt-4 text-sm">
+<div class="mt-4 text-sm opacity-70">
 
-**Why accumulate by default?** Useful for gradient accumulation across mini-batches when you can't fit a large batch in memory.
+**Why accumulate by default?** It simulates larger batch sizes when GPU memory is limited. Instead of processing 64 samples at once, process 4 mini-batches of 16 samples, accumulating gradients, then update weights once. The accumulated gradient approximates what you'd get from the full batch.
 
 </div>
 
