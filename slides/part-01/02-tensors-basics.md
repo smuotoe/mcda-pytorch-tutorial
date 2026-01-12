@@ -193,29 +193,33 @@ layout: default
 
 # Data Types and Casting
 
-<div class="grid grid-cols-2 gap-6">
+<div class="text-sm opacity-70 mb-3">
+
+**Data type (dtype):** How values are stored in memory, trading precision for speed/memory. **Casting:** Converting a tensor from one dtype to another.
+
+</div>
+
+<div class="grid grid-cols-2 gap-4 text-sm">
 
 <div>
 
-### Specifying dtype at Creation
-
-```python
-# Explicit dtype
-t_float = torch.tensor([1, 2, 3], dtype=torch.float32)
-t_int = torch.tensor([1.5, 2.5], dtype=torch.int64)
-
-# Factory functions
-zeros = torch.zeros(3, dtype=torch.float64)
-```
-
 ### Common dtypes
 
-| Type | Description | Use Case |
-|------|-------------|----------|
-| `float32` | 32-bit float | Default, neural nets |
-| `float64` | 64-bit float | High precision |
-| `int64` | 64-bit int | Indices, labels |
-| `bool` | Boolean | Masks |
+| Type | Size | Use Case |
+|------|------|----------|
+| `float32` | 4 bytes | Default for neural nets |
+| `float16` | 2 bytes | Mixed precision training |
+| `bfloat16` | 2 bytes | Same range as float32, less precision |
+| `float64` | 8 bytes | High precision math |
+| `int64` | 8 bytes | Indices, labels |
+| `int32` | 4 bytes | Smaller indices |
+| `bool` | 1 byte | Masks |
+
+<div class="text-xs opacity-70 mt-2">
+
+float16/bfloat16 halve memory and speed up GPU training.
+
+</div>
 
 </div>
 
@@ -227,26 +231,23 @@ zeros = torch.zeros(3, dtype=torch.float64)
 t = torch.tensor([1, 2, 3])
 
 # Using .to()
-t_float = t.to(torch.float32)
+t.to(torch.float32)
+t.to(torch.float16)
+t.to(torch.bfloat16)
 
 # Shorthand methods
-t.float()    # to float32
-t.double()   # to float64
-t.int()      # to int32
-t.long()     # to int64
-t.bool()     # to boolean
-
-# Check type
-t.dtype      # torch.int64
-t.is_floating_point()  # False
+t.float()   # float32
+t.half()    # float16
+t.double()  # float64
+t.int()     # int32
+t.long()    # int64
 ```
 
-### Warning
+<div class="text-xs opacity-70 mt-2">
 
-```python
-# Casting truncates, doesn't round!
-torch.tensor([1.7, 2.3]).int()  # [1, 2]
-```
+**Warning:** Casting to int truncates, doesn't round: `tensor([1.7]).int()` gives `[1]`
+
+</div>
 
 </div>
 
