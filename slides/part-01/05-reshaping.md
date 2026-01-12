@@ -2,7 +2,17 @@
 layout: section
 ---
 
+<div class="flex items-center justify-center gap-12">
+
+<div>
+
 # Reshaping and Memory
+
+</div>
+
+<img src="/images/05-reshaping.jpg" class="h-80 rounded-lg shadow-xl" />
+
+</div>
 
 ---
 layout: default

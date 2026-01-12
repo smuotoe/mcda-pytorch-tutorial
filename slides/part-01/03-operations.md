@@ -2,7 +2,17 @@
 layout: section
 ---
 
+<div class="flex items-center justify-center gap-12">
+
+<div>
+
 # Tensor Operations
+
+</div>
+
+<img src="/images/03-operations.jpg" class="h-80 rounded-lg shadow-xl" />
+
+</div>
 
 ---
 layout: default

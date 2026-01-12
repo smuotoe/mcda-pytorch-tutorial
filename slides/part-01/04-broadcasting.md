@@ -2,7 +2,17 @@
 layout: section
 ---
 
+<div class="flex items-center justify-center gap-12">
+
+<div>
+
 # Broadcasting
+
+</div>
+
+<img src="/images/04-broadcasting.jpg" class="h-80 rounded-lg shadow-xl" />
+
+</div>
 
 ---
 layout: default

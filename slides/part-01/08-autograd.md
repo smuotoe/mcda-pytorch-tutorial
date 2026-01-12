@@ -2,7 +2,17 @@
 layout: section
 ---
 
+<div class="flex items-center justify-center gap-12">
+
+<div>
+
 # Automatic Differentiation (Autograd)
+
+</div>
+
+<img src="/images/08-autograd.jpg" class="h-80 rounded-lg shadow-xl" />
+
+</div>
 
 ---
 layout: default
