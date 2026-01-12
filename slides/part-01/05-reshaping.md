@@ -159,18 +159,17 @@ Understanding when data is shared is crucial for performance and avoiding bugs.
 ### Views (Shared Memory)
 
 ```python
-a = torch.tensor([1, 2, 3, 4])
-b = a.view(2, 2)  # b is a VIEW of a
+a = torch.tensor([1, 2, 3, 4])  # shape (4,)
+b = a.view(2, 2)  # reshape to (2, 2) - b is a VIEW of a
+# b = [[1, 2],
+#      [3, 4]]
 
 b[0, 0] = 99
 print(a)  # tensor([99, 2, 3, 4]) - a changed!
 
 # These create views:
-# - view(), reshape() (usually)
-# - transpose(), permute(), T
-# - squeeze(), unsqueeze()
-# - slicing: a[1:3]
-# - expand()
+# view(), reshape(), transpose(), permute()
+# squeeze(), unsqueeze(), slicing, expand()
 ```
 
 </div>
