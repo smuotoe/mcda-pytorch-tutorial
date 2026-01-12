@@ -1,7 +1,7 @@
 ---
 layout: image-right
 image: /images/06-indexing.jpg
-backgroundSize: contain
+backgroundSize: cover
 backgroundPosition: center
 class: flex flex-col justify-center
 ---

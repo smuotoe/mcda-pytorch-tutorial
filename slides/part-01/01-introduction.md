@@ -1,7 +1,7 @@
 ---
 layout: image-right
 image: /images/01-introduction.jpg
-backgroundSize: contain
+backgroundSize: cover
 backgroundPosition: center
 class: flex flex-col justify-center
 ---
