@@ -160,7 +160,7 @@ Understanding when data is shared is crucial for performance and avoiding bugs.
 
 ```python
 a = torch.tensor([1, 2, 3, 4])  # shape (4,)
-b = a.view(2, 2)  # reshape to (2, 2) - b is a VIEW of a
+b = a.view(2, 2)  # reshape to (2, 2) - b is a VIEW
 # b = [[1, 2],
 #      [3, 4]]
 
@@ -170,6 +170,14 @@ print(a)  # tensor([99, 2, 3, 4]) - a changed!
 # These create views:
 # view(), reshape(), transpose(), permute()
 # squeeze(), unsqueeze(), slicing, expand()
+```
+
+### Check if Shared
+
+```python
+a = torch.tensor([1, 2, 3, 4])
+b = a.view(2, 2)
+print(a.data_ptr() == b.data_ptr())  # True
 ```
 
 </div>
@@ -190,14 +198,6 @@ print(a)  # tensor([1, 2, 3, 4]) - unchanged
 # - contiguous() (when needed)
 # - reshape() (sometimes, when non-contiguous)
 # - to() when changing device/dtype
-```
-
-### Check if Shared
-
-```python
-a = torch.tensor([1, 2, 3, 4])
-b = a.view(2, 2)
-print(a.data_ptr() == b.data_ptr())  # True
 ```
 
 </div>
