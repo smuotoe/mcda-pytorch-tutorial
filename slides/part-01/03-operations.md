@@ -1,18 +1,12 @@
 ---
-layout: section
+layout: image-right
+image: /images/03-operations.jpg
+backgroundSize: contain
+backgroundPosition: center
+class: flex flex-col justify-center
 ---
 
-<div class="flex items-center justify-center gap-12">
-
-<div>
-
 # Tensor Operations
-
-</div>
-
-<img src="/images/03-operations.jpg" class="h-80 rounded-lg shadow-xl" />
-
-</div>
 
 ---
 layout: default

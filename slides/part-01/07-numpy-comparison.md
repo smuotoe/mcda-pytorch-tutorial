@@ -1,18 +1,12 @@
 ---
-layout: section
+layout: image-right
+image: /images/07-numpy.jpg
+backgroundSize: contain
+backgroundPosition: center
+class: flex flex-col justify-center
 ---
 
-<div class="flex items-center justify-center gap-12">
-
-<div>
-
 # PyTorch vs NumPy
-
-</div>
-
-<img src="/images/07-numpy.jpg" class="h-80 rounded-lg shadow-xl" />
-
-</div>
 
 ---
 layout: default
