@@ -38,16 +38,27 @@ a + 10  # tensor([11, 12, 13])  # 10 broadcasts to [10, 10, 10]
 
 ---
 layout: default
+class: py-4
 ---
 
 # Broadcasting Rules
 
-Two tensors are **broadcastable** if, for each dimension (starting from the trailing dimension):
+<div class="text-xs opacity-70 mb-2">
+
+**Trailing dimension:** The rightmost dimension in a shape. For shape `(2, 3, 4)`, dimensions are compared right-to-left: 4, then 3, then 2.
+
+</div>
+
+<div class="text-sm">
+
+Two tensors are **broadcastable** if, for each dimension (right to left):
 1. The dimensions are equal, OR
 2. One of them is 1, OR
 3. One of them doesn't exist (missing dimensions are treated as 1)
 
-<div class="grid grid-cols-2 gap-6 mt-4">
+</div>
+
+<div class="grid grid-cols-2 gap-3 mt-2 text-xs">
 
 <div>
 
@@ -61,16 +72,12 @@ torch.tensor([1, 2, 3]) + torch.tensor([10])
 # (2, 3) + (3,) -> (2, 3)
 a = torch.ones(2, 3)
 b = torch.tensor([1, 2, 3])
-a + b
-# [[2, 3, 4],
-#  [2, 3, 4]]
+a + b  # [[2, 3, 4], [2, 3, 4]]
 
 # (2, 1) + (1, 3) -> (2, 3)
-a = torch.tensor([[1], [2]])     # shape (2, 1)
-b = torch.tensor([[10, 20, 30]]) # shape (1, 3)
-a + b
-# [[11, 21, 31],
-#  [12, 22, 32]]
+a = torch.tensor([[1], [2]])      # (2, 1)
+b = torch.tensor([[10, 20, 30]])  # (1, 3)
+a + b  # [[11, 21, 31], [12, 22, 32]]
 ```
 
 </div>
@@ -93,13 +100,11 @@ a + b  # RuntimeError!
 # Trailing dims: 3 vs 2 - incompatible
 ```
 
-### Debugging Tip
+<div class="opacity-70 mt-2">
 
-```python
-# Always check shapes when broadcasting fails
-print(f"a.shape: {a.shape}")
-print(f"b.shape: {b.shape}")
-```
+**Tip:** Check shapes with `a.shape` and `b.shape` when debugging.
+
+</div>
 
 </div>
 
