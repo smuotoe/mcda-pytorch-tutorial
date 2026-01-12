@@ -160,7 +160,7 @@ Understanding when data is shared is crucial for performance and avoiding bugs.
 
 ```python
 a = torch.tensor([1, 2, 3, 4])  # shape (4,)
-b = a.view(2, 2)  # reshape to (2, 2) - b is a VIEW of a
+b = a.view(2, 2)  # b is a VIEW of a, reshaped to (2, 2)
 # b = [[1, 2],
 #      [3, 4]]
 
