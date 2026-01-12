@@ -43,18 +43,18 @@ class: py-4
 
 # Broadcasting Rules
 
-<div class="text-xs opacity-70 mb-2">
-
-**Trailing dimension:** The rightmost dimension in a shape. For shape `(2, 3, 4)`, dimensions are compared right-to-left: 4, then 3, then 2.
-
-</div>
-
 <div class="text-sm">
 
-Two tensors are **broadcastable** if, for each dimension (right to left):
+Two tensors are **broadcastable** if, comparing dimensions **right-to-left**:
 1. The dimensions are equal, OR
 2. One of them is 1, OR
 3. One of them doesn't exist (missing dimensions are treated as 1)
+
+</div>
+
+<div class="text-xs opacity-70 mt-1 mb-1">
+
+For shape `(2, 3, 4)`, we compare: 4 first, then 3, then 2. The rightmost dimension is called the "trailing" dimension.
 
 </div>
 
