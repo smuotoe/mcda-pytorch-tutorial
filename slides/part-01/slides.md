@@ -133,20 +133,37 @@ src: ./09-summary.md
 ---
 
 ---
-layout: center
-class: text-center
+layout: image-right
+image: /images/09-closing.jpg
+backgroundSize: cover
+class: flex flex-col justify-center
 ---
 
 # End of Part 1
 
-## Next week: Building & Training Neural Networks
+<div class="text-2xl font-semibold text-orange-500 mt-4">
+Next Week: Building & Training Neural Networks
+</div>
 
-<div class="mt-8">
+<div class="mt-6 space-y-3 text-sm">
 
-Questions? Bring them to the session!
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-blue-500"></div>
+<span><strong>nn.Module</strong> - Define layers & forward pass</span>
+</div>
+
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-orange-500"></div>
+<span><strong>Training Loop</strong> - Forward, loss, backward, step</span>
+</div>
+
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span><strong>Optimizers</strong> - SGD, Adam & learning rates</span>
+</div>
 
 </div>
 
-<div class="abs-br m-6 text-sm opacity-50">
-MCDA 5511
+<div class="mt-8 text-base opacity-80">
+Questions? Bring them to the session!
 </div>
