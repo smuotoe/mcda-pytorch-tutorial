@@ -10,21 +10,30 @@ dependencies = [
     "torchvision>=0.20.0",
 ]
 
+# Default: CPU-only (smaller download)
+# CUDA support: uv sync --extra cuda
 [project.optional-dependencies]
 cuda = [
     "torch>=2.5.0",
     "torchvision>=0.20.0",
 ]
 
-# Default: PyPI (CPU)
+# Default: CPU-only from PyTorch CPU index
 # CUDA support: uv sync --extra cuda
 [tool.uv.sources]
 torch = [
+    { index = "pytorch-cpu", extra = false },
     { index = "pytorch-cu124", extra = "cuda" },
 ]
 torchvision = [
+    { index = "pytorch-cpu", extra = false },
     { index = "pytorch-cu124", extra = "cuda" },
 ]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
 
 [[tool.uv.index]]
 name = "pytorch-cu124"
