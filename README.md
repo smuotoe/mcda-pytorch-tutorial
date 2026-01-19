@@ -4,7 +4,10 @@
 
 A two-part tutorial series on PyTorch fundamentals.
 
-[View Slides](https://mcda-pytorch-tutorial.pages.dev)
+## Slides
+
+- [Part 1: Tensors, Operations & Autograd](https://mcda-pytorch-tutorial.pages.dev)
+- [Part 2: Building & Training Neural Networks](https://mcda-pytorch-part2.pages.dev)
 
 ## Part 1: Tensors, Operations & Autograd
 
@@ -15,7 +18,7 @@ A two-part tutorial series on PyTorch fundamentals.
 - Indexing & slicing
 - Automatic differentiation (Autograd)
 
-## Part 2: Building & Training Neural Networks (Coming Soon)
+## Part 2: Building & Training Neural Networks
 
 - The `nn.Module` class
 - Building network architectures
@@ -45,15 +48,16 @@ This installs the **CPU-only** version of PyTorch (smaller download, works on al
 If you have an NVIDIA GPU with CUDA support:
 
 ```bash
-uv sync --extra cuda
+uv sync --extra cu124
 ```
 
 ## Exercises
 
-Complete the hands-on exercises in Jupyter Notebook:
+Complete the hands-on exercises in Jupyter Notebooks:
 
-```bash
-exercises/part1-exercises.ipynb
+```
+exercises/pytorch-1-exercises.ipynb  # Part 1: Tensors & Autograd
+exercises/pytorch-2-exercises.ipynb  # Part 2: Neural Networks
 ```
 
 ## Resources
